@@ -1,0 +1,107 @@
+.testimonial-pricing-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fdf9f6;
+  padding: 2rem;
+  color: #09060e;
+  border-radius: 12px;
+  gap: 30px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.stars {
+  color: #c59b5e;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.testimonial-section {
+  flex: 1 1 45%;
+  margin-bottom: 2rem;
+}
+
+.testimonial-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.testimonial-author {
+  font-weight: 500;
+}
+
+.pricing-section {
+  flex: 1 1 50%;
+}
+
+.pricing-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 180px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+}
+
+.card-header {
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card-header p {
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+
+.card-body {
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0 0 8px 8px;
+}
+
+.card-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-body li {
+  margin: 0.4rem 0;
+}
+
+.card-body.standard {
+  background-color: #e5d0ad;
+}
+
+.card-body.premium {
+  background-color: #d2b17c;
+}
+
+.card-body.luxury {
+  background-color: #b28850;
+}
