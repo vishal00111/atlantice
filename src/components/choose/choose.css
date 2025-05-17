@@ -1,0 +1,52 @@
+.why-choose-section {
+    background: radial-gradient(ellipse at center, #f7f4ef 0%, #eae6e0 100%);
+    padding: 60px 20px;
+  }
+  
+  .container-small {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-family: 'Georgia', serif;
+    font-weight: 600;
+    color: #1f1f1f;
+    margin-bottom: 40px;
+  }
+  
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    justify-items: center;
+  }
+  
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .icon-wrapper {
+    background: white;
+    border-radius: 50%;
+    padding: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  }
+  
+  .feature-icon {
+    font-size: 34px;
+    color: #4b4b4b;
+  }
+  
+  .feature-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    margin-top: 12px;
+  }
+  

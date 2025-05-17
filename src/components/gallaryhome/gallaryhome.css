@@ -1,0 +1,33 @@
+.gallery-container {
+   
+
+}
+
+.gallery-title {
+    font-size: 2rem;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.gallery-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
