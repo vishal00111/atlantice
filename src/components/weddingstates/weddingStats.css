@@ -1,0 +1,46 @@
+/* Already included styles (keep them) */
+@import 'aos/dist/aos.css';  /* Only if needed in CSS */
+
+.wedding-stats {
+  background-color: #fdf7f3;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.stat-card {
+  background: #fff5ef;
+  border: 1px solid #e4c6af;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+}
+
+.stat-card h2 {
+  color: #b16b34;
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.stat-card p {
+  color: #3f3f3f;
+  font-size: 15px;
+  font-family: 'Georgia', serif;
+}

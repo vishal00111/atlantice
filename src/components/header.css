@@ -64,6 +64,7 @@
     border-radius: 16px;
     font-family: 'Lora', serif;
 }
+
 .hero-text h1 {
     font-size: 2.8rem;
     line-height: 1.3;
@@ -82,7 +83,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-
+/* Updated button style */
 .hero-buttons button {
     padding: 0.8rem 1.8rem;
     font-size: 1.1rem;
@@ -91,21 +92,12 @@
     border: none;
     cursor: pointer;
     transition: background 0.3s ease;
-}
-
-.visit-btn {
-    background-color: #ff5722;
+    background-color: #ff9800;
     color: #fff;
     font-weight: 700;
 }
 
-.call-btn {
-    background-color: #009688;
-    color: #fff;
-    font-weight: 700;
-}
-
-.visit-btn:hover, .call-btn:hover {
+.hero-buttons button:hover {
     opacity: 0.9;
 }
 

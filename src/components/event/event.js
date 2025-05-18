@@ -32,29 +32,15 @@ const events = [
 const EventSpaces = () => {
   return (
     <div className="event-wrapper">
-      <div className="event-group">
-        <h2>Our Event Spaces</h2>
-        <div className="event-row">
-          {events.slice(0, 2).map((event, index) => (
-            <div className="event-card" key={index}>
-              <img src={event.image} alt={event.title} />
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="event-group">
-        <h2>Our Event Spaces</h2>
-        <div className="event-row">
-          {events.slice(2).map((event, index) => (
-            <div className="event-card" key={index + 2}>
-              <img src={event.image} alt={event.title} />
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
-            </div>
-          ))}
-        </div>
+      <h2>Our Event Spaces</h2>
+      <div className="event-row">
+        {events.map((event, index) => (
+          <div className="event-card" key={index}>
+            <img src={event.image} alt={event.title} />
+            <h3>{event.title}</h3>
+            <p>{event.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

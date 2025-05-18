@@ -1,0 +1,56 @@
+.wedding-container {
+  max-width: 1050px;  /* Increased width */
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.wedding-experience {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.image-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-section {
+  flex: 1;
+  padding: 30px;
+  font-family: 'Georgia', serif;
+  color: #333;
+}
+
+.text-section h2 {
+  color: #9c7c38;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.text-section p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.text-section button {
+  background-color: #9c7c38;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.text-section button:hover {
+  background-color: #7a612b;
+}
