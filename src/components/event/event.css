@@ -19,21 +19,51 @@
   width: 250px;
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  transition: transform 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  /* Animation 1 & 4 base */
+  opacity: 0;
+  transform: translateY(30px);
+  animation-fill-mode: forwards;
+  transition: box-shadow 0.3s ease;
 }
 
+.event-card:nth-child(1) {
+  animation: slideUp 0.6s ease forwards 0.2s;
+}
+
+.event-card:nth-child(2) {
+  animation: slideUp 0.6s ease forwards 0.4s;
+}
+
+.event-card:nth-child(3) {
+  animation: slideUp 0.6s ease forwards 0.6s;
+}
+
+.event-card:nth-child(4) {
+  animation: slideUp 0.6s ease forwards 0.8s;
+}
+
+/* Animation 2: Hover Scale + Shadow */
 .event-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Animation 3: Image zoom on hover */
 .event-card img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  transition: transform 0.4s ease;
 }
 
+.event-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Card title and description styling */
 .event-card h3 {
   margin: 0.8rem 0 0.5rem;
   font-size: 1.2rem;
@@ -42,4 +72,16 @@
 .event-card p {
   font-size: 0.95rem;
   color: #555;
+}
+
+/* Slide up animation keyframes (Animation 4) */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

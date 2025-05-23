@@ -1,0 +1,29 @@
+.gallery-banner-container {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.gallery-banner-content {
+  text-align: center;
+  padding-top: 6rem;
+  z-index: 10;
+}
+
+.gallery-banner-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.gallery-banner-content p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #ddd;
+}

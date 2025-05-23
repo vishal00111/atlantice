@@ -26,11 +26,17 @@ const testimonials = [
 
 const TestimonialsAndPricing = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 4000); // Slide every 4 seconds
+      setFade(false); // fade out current testimonial
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+        setFade(true); // fade in new testimonial
+      }, 500); // fade out duration matches CSS
+    }, 4000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -40,7 +46,7 @@ const TestimonialsAndPricing = () => {
       <div className="testimonial-section">
         <h2 className="section-title">Testimonials</h2>
         <div className="stars">★★★★★</div>
-        <div className="testimonial-box">
+        <div className={`testimonial-box ${fade ? 'fade-in' : 'fade-out'}`}>
           <p className="testimonial-text">{testimonials[currentIndex].text}</p>
           <p className="testimonial-author">{testimonials[currentIndex].author}</p>
         </div>
@@ -49,7 +55,13 @@ const TestimonialsAndPricing = () => {
             <span
               key={index}
               className={`dot ${currentIndex === index ? 'active' : ''}`}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => {
+                setFade(false);
+                setTimeout(() => {
+                  setCurrentIndex(index);
+                  setFade(true);
+                }, 300);
+              }}
             ></span>
           ))}
         </div>

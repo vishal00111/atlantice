@@ -1,0 +1,102 @@
+/* Intro container */
+.intro-container {
+  position: fixed;
+  inset: 0;
+  background: #222; /* halka dark */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+/* Text content */
+.intro-content {
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  color: #f9d976;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: textReveal 2s ease forwards;
+  user-select: none;
+  pointer-events: none;
+
+}
+
+.title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #f9d976, #fbc02d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  margin-top: 12px;
+  color: #fbc02d;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Text reveal animation */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Gate panels */
+.split {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: red;
+
+  z-index: 20;
+  transition: transform 0.8s ease-in-out; /* jaldi khulne ke liye 0.8s */
+  filter: drop-shadow(0 0 15px rgba(255, 200, 0, 0.8));
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.intro-container.exit .left {
+  transform: translateX(-100%);
+}
+
+.intro-container.exit .right {
+  transform: translateX(100%);
+}
+
+.intro-container.exit .intro-content {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.4rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}

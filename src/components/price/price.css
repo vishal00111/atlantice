@@ -1,12 +1,22 @@
+/* Container with animated gradient background */
 .testimonial-pricing-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #fdf9f6;
+  background: linear-gradient(270deg, #fdf9f6, #fbe6d4, #fdf9f6);
+  background-size: 600% 600%;
+  animation: gradientBG 15s ease infinite;
   padding: 2rem;
   color: #09060e;
   border-radius: 12px;
   gap: 30px;
+}
+
+/* Gradient Background Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .section-title {
@@ -15,18 +25,27 @@
   margin-bottom: 0.5rem;
 }
 
-/* Testimonial Carousel Section */
+/* Testimonials Section */
 .testimonial-section {
-  flex: 1 1 100%;
+  flex: 1 1 45%;
+  margin-bottom: 2rem;
+  margin-left: 40px;
   text-align: center;
   position: relative;
 }
 
-.testimonial-carousel {
-  max-width: 600px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
+.stars {
+  color: #c59b5e;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-shadow: 0 0 8px #ffcc66;
+  animation: shine 2.5s infinite;
+}
+
+/* Stars glow/shimmer */
+@keyframes shine {
+  0%, 100% { text-shadow: 0 0 8px #ffcc66; }
+  50% { text-shadow: 0 0 15px #ffdd88; }
 }
 
 .testimonial-box {
@@ -38,8 +57,11 @@
   color: #333;
   position: relative;
   transition: transform 0.5s ease-in-out;
+  border: 1px solid #eee;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Quotation mark decoration */
 .testimonial-box::before {
   content: '❝';
   font-size: 3rem;
@@ -48,6 +70,37 @@
   left: 20px;
   color: #c59b5e;
   opacity: 0.2;
+}
+
+/* Fade In and Fade Out animations for testimonials */
+.fade-in {
+  animation: fadeInUp 0.6s forwards;
+}
+
+.fade-out {
+  animation: fadeOutDown 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 .testimonial-text {
@@ -75,47 +128,32 @@
   background-color: #c4c4c4;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .dot.active {
   background-color: #c59b5e;
   transform: scale(1.2);
+  animation: pulse 1.5s infinite;
 }
 
 .dot:hover {
   background-color: #b28850;
 }
 
-.stars {
-  color: #c59b5e;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+/* Pulsing active dot */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1.2);
+    background-color: #c59b5e;
+  }
+  50% {
+    transform: scale(1.35);
+    background-color: #d4b36b;
+  }
 }
 
-.testimonial-section {
-  flex: 1 1 45%;
-  margin-bottom: 2rem;
-  margin-left: 40px;
-}
-
-.testimonial-box {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-}
-
-.testimonial-text {
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-.testimonial-author {
-  font-weight: 500;
-}
-
+/* Pricing Section */
 .pricing-section {
   flex: 1 1 50%;
 }
@@ -125,6 +163,7 @@
   gap: 1rem;
   flex-wrap: wrap;
   margin-left: 20px;
+  justify-content: center;
 }
 
 .pricing-card {
@@ -134,30 +173,44 @@
   width: 100%;
   max-width: 180px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card-header {
+  background-color: #c59b5e;
+  padding: 0.8rem;
+  border-radius: 8px 8px 0 0;
+  color: white;
+  font-weight: 700;
   text-align: center;
-  padding: 1rem;
-  border-bottom: 1px solid #eee;
-}
-
-.card-header h3 {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.card-header p {
-  font-weight: bold;
-  margin-top: 0.25rem;
 }
 
 .card-body {
-  color: #fff;
   padding: 1rem;
-  border-radius: 0 0 8px 8px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: #444;
 }
 
+.card-body.standard {
+  background-color: #f8f0de;
+}
+
+.card-body.premium {
+  background-color: #f5e2b8;
+}
+
+.card-body.luxury {
+  background-color: #ead37e;
+}
+
+/* List styling */
 .card-body ul {
   list-style: none;
   padding: 0;
@@ -165,123 +218,33 @@
 }
 
 .card-body li {
-  margin: 0.4rem 0;
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
 }
 
-.card-body.standard {
-  background-color: #e5d0ad;
-}
-
-.card-body.premium {
-  background-color: #d2b17c;
-}
-
-.card-body.luxury {
-  background-color: #b28850;
-}
-
-/* Responsive Styles */
-@media (max-width: 1024px) {
-  .testimonial-section {
-    flex: 1 1 45%;
-  }
-
-  .pricing-section {
-    flex: 1 1 100%;
-    margin-top: 2rem;
-  }
-
-  .pricing-cards {
-    justify-content: space-between;
-  }
-
-  .pricing-card {
-    max-width: 45%;
-  }
-
-  .testimonial-pricing-container {
-    padding: 2rem 1rem;
-    gap: 20px;
-  }
+/* Checkmark before each li */
+.card-body li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #c59b5e;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
-  .testimonial-section {
-    flex: 1 1 100%;
-    margin-left: 0;
-    margin-bottom: 2rem;
-  }
-
-  .pricing-section {
-    flex: 1 1 100%;
-  }
-
-  .pricing-cards {
-    justify-content: center;
-  }
-
-  .pricing-card {
-    max-width: 90%;
-  }
-
-  .testimonial-pricing-container {
-    padding: 1.5rem;
-  }
-
-  .section-title {
-    font-size: 1.25rem;
-  }
-
-  .testimonial-box {
-    padding: 1.5rem;
-  }
-
-  .testimonial-text {
-    font-size: 1rem;
-  }
-
-  .testimonial-author {
-    font-size: 0.9rem;
-  }
-
-  .stars {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
   .testimonial-pricing-container {
     flex-direction: column;
-    gap: 20px;
     padding: 1rem;
   }
-
-  .testimonial-section {
+  .testimonial-section, .pricing-section {
     flex: 1 1 100%;
     margin-left: 0;
   }
-
-  .pricing-section {
-    flex: 1 1 100%;
+  .pricing-cards {
+    justify-content: space-around;
   }
-
   .pricing-card {
     max-width: 100%;
-  }
-
-  .section-title {
-    font-size: 1.2rem;
-  }
-
-  .testimonial-box {
-    padding: 1rem;
-  }
-
-  .testimonial-text {
-    font-size: 0.95rem;
-  }
-
-  .testimonial-author {
-    font-size: 0.85rem;
   }
 }

@@ -1,123 +1,203 @@
 .hero-container {
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    color: white;
-    font-family: 'Roboto', sans-serif;
+  height: 80vh;
+  /* Background gradient animation */
+  background: linear-gradient(-45deg, #ff6f61, #ffb347, #ffd700, #ff8c00);
+  
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  animation: rotateIn 1.5s ease forwards;
 }
 
 .nav-links {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1rem;
-    transition: color 0.2s ease;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: #f9a825;
+  color: #f9a825;
 }
 
 .menu-icon {
-    font-size: 1.6rem;
-    color: #fff;
+  font-size: 1.6rem;
+  color: #fff;
 }
 
 .hero-text {
-    margin-top: 8rem;
-    text-align: center;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    padding: 2.5rem;
-    border-radius: 16px;
-    font-family: 'Lora', serif;
+  margin-top: 8rem;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  padding: 2.5rem;
+  border-radius: 16px;
+  font-family: 'Lora', serif;
+
+  /* Fade and slide up animation with delay */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 1.5s ease forwards;
+  animation-delay: 1s;
 }
 
 .hero-text h1 {
-    font-size: 2.8rem;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    font-family: 'Merriweather', serif;
+  font-size: 2.8rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  font-family: 'Merriweather', serif;
+
+  /* Typewriter effect */
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  width: 0;
+  animation: typewriter 3s steps(30, end) forwards;
+  animation-delay: 1.8s;
 }
 
 .hero-text p {
-    font-size: 1.1rem;
-    color: #ddd;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
-    font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomIn 1.2s ease forwards;
+  animation-delay: 4.9s; /* after heading finishes */
 }
 
-/* Updated button style */
 .hero-buttons button {
-    padding: 0.8rem 1.8rem;
-    font-size: 1.1rem;
-    margin: 0 0.8rem;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    background-color: #ff9800;
-    color: #fff;
-    font-weight: 700;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  margin: 0 0.8rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  background-color: #ff9800;
+  color: #fff;
+  font-weight: 700;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 1s ease forwards;
+  animation-delay: 5.4s;
 }
 
 .hero-buttons button:hover {
-    opacity: 0.9;
+  opacity: 0.9;
 }
 
+/* Media queries */
 @media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 0.8rem 1.5rem;
-    }
+  .navbar {
+    flex-direction: column;
+    padding: 0.8rem 1.5rem;
+  }
 
-    .hero-text {
-        margin-top: 6rem;
-        padding: 1.8rem;
-    }
+  .hero-text {
+    margin-top: 6rem;
+    padding: 1.8rem;
+  }
 
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
 
-    .hero-buttons button {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
+  .hero-buttons button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animateBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
